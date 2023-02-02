@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<script src="jquery-3.2.0.min.js">	</script>
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script src="bootstrap.min.js">	</script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"		crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<!-- Heading -->
+	<div class="container-fluid text-center">
+		<h1 style="color: white;">Unbeatable TIC-TAC-TOE</h1></div>
+	<br>
+	<div class="container-fluid text-left">
+	
+		<!-- Inform area for player 1's name -->
+		<h3 id="player1display" style="color: white;">
+			<span id="player1name">Player  1 : </span><span id="player1score" class="playerscore">0</span>
+		</h3>
+			<!-- Inform area for player 2's name -->
+			<h3 id="player2display" style="color: white;">
+				<span id="player2name">Player 2  : </span><span id="player2score" class="playerscore">0</span>
+				</h3>
+	</div>
+	<div class="container-fluid text-center message-area">	
+		<!-- Inform area for player's turn -->
+		<h4 id="screen" style="color: white;"><span id="currentPlayerName">Player 1</span>'s  TURN</h4>
+    <div><h4 class="message" id="message" style="color: white;">Lets start</h4> </div>    
+	</div>
+	<br>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-4">         
+        <div class="selection-area hide-me player-type">
+          <h3 style="color: white;">Play with:</h3>          
+          <button class="btn btn-lg btn-success" id="human"><i class='fas fa-user-alt'></i> Human</button>
+          <button class="btn btn-lg btn-danger" id="computer"><i class='fas fa-desktop'></i> Computer</button>
+        </div>
+        <div class="selection-area hide-me player-turn">
+          <h3 style="color: white;">Play as:</h3>          
+          <button class="btn btn-lg btn-primary" id="1"> Player 1</button>
+          <button class="btn btn-lg btn-info" id="2"> Player 2</button>
+        </div>
+        <div class="selection-area hide-me symbol">
+          <h3 style="color: white;">Play As:</h3>          
+          <button class="btn btn-lg btn-warning fa fa-check" id="fa-check"></button>
+          <button class="btn btn-lg btn-warning fa fa-times" id="fa-times"></button>
+        </div>
+      </div>
+			<div class="col-lg-4 board-area">
+				<!-- Playing Canvas -->
+				<center>
+					<table>
+						<tr>
+							<td colspan="3">
+						</tr>
+						<tr>
+							<td>
+								<button id="sq0" class="fillbox empty"></button>
+							</td>
+							<td>
+								<button id="sq1" class="fillbox mpty"></button>
+							</td>
+							<td>
+								<button id="sq2" class="fillbox empty"></button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button id="sq3" class="fillbox empty"></button>
+							</td>
+							<td>
+								<button id="sq4" class="fillbox empty"></button>
+							</td>
+							<td>
+								<button id="sq5" class="fillbox empty"></button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button id="sq6" class="fillbox empty"></button>
+							</td>
+							<td>
+								<button id="sq7" class="fillbox empty"></button>
+							</td>
+							<td>
+								<button id="sq8" class="fillbox empty"></button>
+							</td>
+						</tr>
+					</table>
+					<br>
+					<br>
+				<div id="gameoption">-
+          <!-- Reset button for Game -->
+          <input type="button" class="reset btn btn-lg btn-danger" value="RESET" onClick="reset()" />
+          <input type="button" class="reset btn btn-lg btn-success " value="New Game" onClick="newGame()" />
+          <input type="button" class="reset btn btn-lg btn-warning" value="RESET Score" onClick="resetScore()" />
+        </div>					
+				</center>
+			</div>
+			<div class="col-lg-4">  
+      </div>
+		</div>
+	</div>
+</body>
+
+<script>
+var turn = 1;
+const availableSymbols1="fa-check";
+const availableSymbols2="fa-times";
+let player1name="Player 1";
+let player2name="Player 2";
+var player1Symbol="fa-check";
+var player2Symbol="fa-times";
+var player1Score=0;
+var player2Score=0;
+var filled=0;
+var currentPlayer=1;
+var symbol;
+var finishedGame=false;
+let PlayAI;
+
+// initialize game
+let myAI;
+let myGame;
+
+// initialize variables for player and AI symbols
+let playerSymbol = "";
+let compSymbol = "";
+
+// only allow moves if the computer is done.
+let playerTurn;
+
+
+</script>
+<script src="state.js"></script>
+<script src="AI.js"></script>
+<script src="algorithm.js"></script>
+<script src="done.js"></script>
+</html>
